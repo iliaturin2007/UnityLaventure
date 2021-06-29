@@ -13,9 +13,9 @@ public class triggerPlayer : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerEnterEvent.Invoke();
+            if (DestroyOnTrigger)
+                Destroy(gameObject);
         }
-        if(DestroyOnTrigger)
-            Destroy(gameObject);
     }
 
     private void OnTriggerExit(Collider collision)
