@@ -12,4 +12,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void NextLevel()
+    {
+        string str = SceneManager.GetActiveScene().name;
+        string Num = (int.Parse(str.ToCharArray()[str.Length - 1].ToString()) + 1).ToString();
+        str = str.Remove(str.Length - 1);
+        str += Num;
+        Load(str);
+    }
 }
